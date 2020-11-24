@@ -40,8 +40,122 @@
  * and t. The floor that breaks will be the value of T.
  *
  * Version 4
+ * Try to throw eggs from 1, 4, 9, 16, 25,…(k-1)^2, k^2…floor,
+ * if the egg is broken on floor k^2, it means (k-1)^2≤T ≤k^2,
+ * this step has been tried √T times (k ≈ √T).
+ * Then start from floor (k-1)^2+1 and end at floor k^2-1,
+ * this step needs to try k^2-1-(k-1)^2-1+1=2√T-2times. Total used 3√T-2 times.
  */
 
 public class W1P2N3EggDrop {
+    public static int T = 10;
+    static int numsOfTry = 0;
+    static int numsOfEggBroken = 0;
 
+    public static boolean drop(int i){
+        numsOfTry++;
+        if(i < T) {
+            System.out.println("from " + i + " no");
+            return false;
+        }
+        else{
+            System.out.println("from " + i + " yes");
+            numsOfEggBroken++;
+            return true;
+        }
+    }
+
+    //1egg;T
+    public static void go0(int n){
+        for (int i = 0; i < n; i++) {
+            boolean tmp = drop(i);
+            if(tmp == true) {
+                System.out.println("T is " + i);
+                break;
+            }
+        }
+    }
+
+    //lg(n)egg;lg(n)
+    public static void go1(int start, int end){
+        while(start < end) {
+            int mid = (start + end) / 2;
+            boolean tmp = drop(mid);
+            if (tmp == false) start = mid + 1;
+            else end = mid;
+        }
+        System.out.println("T is " + (start + end) / 2);
+    }
+
+    //lg(T)egg;2lg(T)
+    public static void go2(int n){
+        int i;
+        int start = 0;
+        int end = n - 1;
+        boolean tmp = false;
+        for (i = 0; i <= (int)(Math.log(n)  / Math.log(2)); i++) {
+            int t = (int)Math.pow(2,(double)i);
+            tmp = drop(t);
+            if(tmp == true){
+                if(i > 1) start = (int)Math.pow(2,(double)(i - 1)) + 1;
+                end =(int)Math.pow(2,(double)i) - 1;
+                System.out.println(start);
+                break;
+            }
+        }
+        if (tmp == false) go1((int)Math.pow(2,(double) (i-1)) + 1, n-1);
+        else go1(start, end);
+    }
+
+    //2egg;2√n
+    public static void go3(int n){
+        int l = (int) Math.sqrt(n);
+        int k = -1;
+        for (int i = 0; i * l < n; i++) {
+            boolean tmp = drop(i * l);
+            if(tmp == true){
+                k = i;
+                break;
+            }
+        }
+        for (int i = (k-1) * l + 1; i < k * l; i++) {
+            boolean tmp = drop(i);
+            if(tmp == true){
+                System.out.println("\nT is " + i);
+                break;
+            }
+        }
+    }
+
+    //2egg;3√T
+    public static void go4(int n){
+        int k = -1;
+        int i;
+        boolean tmp = false;
+        for (i = 0; Math.pow(i, 2) < n; i++) {
+            tmp = drop((int)Math.pow(i, 2));
+            if(tmp == true){
+                k = i;
+                break;
+            }
+        }
+        if (tmp == false) k = i;
+
+        for (int j = (int)Math.pow(k-1, 2) + 1; j < Math.pow(k, 2); j++) {
+            tmp = drop(j);
+            if(tmp == true){
+                System.out.println("\nT is " + j);
+                break;
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        int n = 15;
+        //go1(n,0, n-1);
+        go4(n);
+        System.out.println("Number of the Broken Eggs is " + numsOfEggBroken);
+        System.out.println("Number of trying is " + numsOfTry);
+    }
 }
