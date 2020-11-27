@@ -19,6 +19,46 @@
  */
 
 public class W2P2N3DutchNationalFlag {
+    private static void exch(char[] a, int i, int j) {
+        char temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
 
+    private static boolean less(char a, char b) {
+        return (a == 'R' && (b == 'W'|| b == 'B')) || (a == 'W' && b == 'B');
+    }
 
+    public static void sort(char[] a) {
+        sort(a, 0, a.length - 1);
+    }
+
+    private static void sort(char[] a, int lo, int hi) {
+        if (hi <= lo) return;
+        int lt = lo, i = lo, gt = hi;
+        char sp = a[lo];
+
+        while(i <= gt) {
+            if(less(a[i],sp)) exch(a, i++, lt++);
+            else if(less(sp, a[i])) exch(a, i, gt--);
+            else i++;
+        }
+
+        sort(a, lo, lt-1);
+        sort(a, gt + 1, hi);
+    }
+
+    private static void printArray(char[] a) {
+        System.out.print("[");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.print("]");
+    }
+
+    public static void main(String args[]) {
+        char[] s = {'B', 'R', 'W', 'R', 'W', 'W', 'B', 'R'};
+        sort(s);
+        printArray(s);
+    }
 }
