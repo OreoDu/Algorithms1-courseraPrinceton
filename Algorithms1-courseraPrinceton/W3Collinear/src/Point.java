@@ -23,6 +23,8 @@ public class Point implements Comparable<Point> {
      * @param y the <em>y</em>-coordinate of the point
      */
     public Point(int x, int y) {
+        if (x < 0 || x > 32767 || y < 0 || y > 32767)
+            throw new IllegalArgumentException("The range of x and y should be between 0 and 32767!");
         this.x = x;
         this.y = y;
     }
@@ -62,9 +64,9 @@ public class Point implements Comparable<Point> {
         if (x0 == x1) {
             if (y0 == y1) return Double.NEGATIVE_INFINITY;
             else return Double.POSITIVE_INFINITY;
-        }else if (y0 == y1) return 0.0;
+        }else if (y0 == y1) return +0.0;
         else {
-            return (y1 - y0) / (x1 - x0);
+            return 1.0 * (y1 - y0) / (x1 - x0);
         }
     }
 
@@ -127,7 +129,7 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        Point a = new Point(2,2);
+        Point a = new Point(250,250);
         Point b = new Point(4,4);
         a.draw();
         b.draw();
