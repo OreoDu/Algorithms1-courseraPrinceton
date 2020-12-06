@@ -3,12 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/Algorithms1-courseraPrinceton.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/Algorithms1-courseraPrinceton.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/CourseAssignment.iml" filepath="$PROJECT_DIR$/.idea/CourseAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CourseAssignment.iml" filepath="$PROJECT_DIR$/.idea/modules/CourseAssignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/Quiz/Quiz.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/Quiz/Quiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/W1Percolation/W1Percolation.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/W1Percolation/W1Percolation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/W2DequesAndRandomizedQueues.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/W2DequesAndRandomizedQueues.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/W2DequesRandomizedQueues/W2DequesRandomizedQueues.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/W2DequesRandomizedQueues/W2DequesRandomizedQueues.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/W3Collinear.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/W3Collinear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algorithms1-courseraPrinceton/W3Collinear/W3Collinear.iml" filepath="$PROJECT_DIR$/Algorithms1-courseraPrinceton/W3Collinear/W3Collinear.iml" />
     </modules>
   </component>
 </project>

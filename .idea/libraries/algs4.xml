@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/Algorithms1-courseraPrinceton/algs4.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/Algorithms1-courseraPrinceton/algs4.jar!/" />
+    </SOURCES>
   </library>
 </component>

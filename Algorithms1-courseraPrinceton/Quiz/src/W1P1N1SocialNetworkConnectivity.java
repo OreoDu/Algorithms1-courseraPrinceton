@@ -11,9 +11,7 @@
  * Assume that the log file is sorted by timestamp and that friendship is an
  * equivalence relation. The running time of your algorithm should be MlogN or
  * better and use extra space proportional to N.
- */
-
-/**
+ *
  * Solution:
  *
  * Use a union-find data structure with each site representing a social network
