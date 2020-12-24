@@ -1,7 +1,9 @@
+package W3Collinear;
+
 /*************************************************************************
- *  Compilation:  javac LineSegment.java
+ *  Compilation:  javac W3Collinear.LineSegment.java
  *  Execution:    none
- *  Dependencies: Point.java
+ *  Dependencies: W3Collinear.Point.java
  *
  *  An immutable data type for Line segments in the plane.
  *  For use on Coursera, Algorithms Part I programming assignment.

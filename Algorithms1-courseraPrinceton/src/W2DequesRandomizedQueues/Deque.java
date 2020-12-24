@@ -1,3 +1,5 @@
+package W2DequesRandomizedQueues;
+
 import java.util.Iterator;
 
 /**
@@ -110,7 +112,7 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     private void assertEmptyDeque() {
-        if (isEmpty()) throw new java.util.NoSuchElementException("Deque underflow");
+        if (isEmpty()) throw new java.util.NoSuchElementException("W2DequesRandomizedQueues.Deque underflow");
     }
 
     // unit testing (required)

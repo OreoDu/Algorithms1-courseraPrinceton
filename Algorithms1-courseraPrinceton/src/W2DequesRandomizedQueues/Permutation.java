@@ -1,3 +1,5 @@
+package W2DequesRandomizedQueues;
+
 import edu.princeton.cs.algs4.StdIn;
 
 public class Permutation {
